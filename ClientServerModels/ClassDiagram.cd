@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClientServerModels.Character">
+    <Position X="6.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAEAAAAAAABBAASAAAAAABAAAAAAAAACEAA=</HashCode>
+      <FileName>Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSession">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="ClientServerModels.GameSession.MapSize">
+        <TypeIdentifier>
+          <NewMemberFileName>GameSession.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAAIAABCgAAAAAAAAAAQAAAAAAAAAAAAAAABACAA=</HashCode>
+      <FileName>GameSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.LoggedClient">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAgQAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoggedClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.Food">
+    <Position X="6.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.GameObject">
+    <Position X="4.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAIAAACEAAAAAAABBAACAAAAAABAAAwAAAAACEAA=</HashCode>
+      <FileName>GameSessionModels\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerScoreItem">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerScoreItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.MovingDownState">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\MovingDownState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.MovingLeftState">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\MovingLeftState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.MovingRightState">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\MovingRightState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.MovingUpState">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\MovingUpState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.Player">
+    <Position X="1.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAgAAAAQAAACAABAAQABAAAQAAFAAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.PlayerState">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\PlayerState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientServerModels.GameSessionModels.PlayerModels.PoolStates">
+    <Position X="4.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAEAAAEAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>GameSessionModels\PlayerModels\PoolStates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

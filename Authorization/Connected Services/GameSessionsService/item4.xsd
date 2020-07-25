@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GameObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GlobalX" type="xs:double" />
+      <xs:element minOccurs="0" name="GlobalY" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MainBlueColor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MainGreenColor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MainRedColor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Radius" type="xs:double" />
+      <xs:element minOccurs="0" name="StrokeBlueColor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="StrokeGreenColor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="StrokeLength" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="StrokeRedColor" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="StrokeSpace" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="StrokeThickness" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameObject" nillable="true" type="tns:GameObject" />
+  <xs:complexType name="ArrayOfFood">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Food" nillable="true" type="tns:Food" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFood" nillable="true" type="tns:ArrayOfFood" />
+  <xs:complexType name="Food">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GameObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Food" nillable="true" type="tns:Food" />
+  <xs:complexType name="ArrayOfPlayerScoreItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerScoreItem" nillable="true" type="tns:PlayerScoreItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerScoreItem" nillable="true" type="tns:ArrayOfPlayerScoreItem" />
+  <xs:complexType name="PlayerScoreItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Score" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerScoreItem" nillable="true" type="tns:PlayerScoreItem" />
+</xs:schema>

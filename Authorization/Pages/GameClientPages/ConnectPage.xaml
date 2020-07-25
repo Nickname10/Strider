@@ -1,0 +1,81 @@
+﻿<Page x:Class="Authorization.Pages.GameClientPages.ConnectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Authorization.Pages.GameClientPages"
+      mc:Ignorable="d"
+      d:DesignHeight="768" d:DesignWidth="1366" Background="White"
+      Title="Connect">
+    <Grid Background="#f4f4f2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Text="Session list"
+                   Grid.Column="1" Grid.ColumnSpan="3" />
+        <ListBox ItemsSource="{Binding GameSessions}" Grid.Row="1" Grid.Column="1"
+                 Grid.ColumnSpan="3" Grid.RowSpan="3"
+                 SelectedItem="{Binding SelectedSession}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="18" Text="{Binding Name}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NumberPlayers}" />
+                            <TextBlock Text="/" />
+                            <TextBlock Text="{Binding MaxPlayers}" />
+                            <TextBlock Margin="10 0 0 0" Text="{Binding MapSizeAsString}"/>
+                            <TextBlock Margin="10 0 0 0" Text="{Binding Description}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="4" Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="40"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+            <Button Command="{Binding DeleteSessionCommand}"
+                    Content="DELETE"
+                    Height="42"
+                    Width="160"
+                    FontWeight="Light"
+                    Margin="0"
+                    Visibility="{Binding DeleteButtonVisibility}"
+                    Style="{StaticResource MenuButton}" />
+            <Button Command="{Binding BackCommand}"
+                    Content="BACK"
+                    Height="42"
+                    Width="160"
+                    FontWeight="Light"
+                    Margin="25 0 0 0"
+                    Style="{StaticResource MenuButton}" />
+            <Button Command="{Binding RefreshCommand}"
+                    Content="REFRESH"
+                    Height="42"
+                    Width="160"
+                    Margin="25 0 0 0"
+                    Style="{StaticResource MenuButton}" />
+
+            <Button Command="{Binding ConnectCommand}"
+                    Content="CONNECT"
+                    Height="42"
+                    Width="160"
+                    Margin="25 0 0 0"
+                    Style="{StaticResource MenuButton}" />
+        </StackPanel>
+    </Grid>
+</Page>

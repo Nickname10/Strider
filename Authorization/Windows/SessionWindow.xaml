@@ -1,0 +1,66 @@
+﻿<Window x:Class="Authorization.Windows.SessionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authorization"
+        mc:Ignorable="d"
+        Icon="../Resources/Images/AppIcon.png"
+        Title="SessionWindow" Width="1366" Height="768">
+    <Window.InputBindings>
+        <KeyBinding Key="Up" Command="{Binding KeyWCommand}" />
+        <KeyBinding Key="Left" Command="{Binding KeyACommand}" />
+        <KeyBinding Key="Down" Command="{Binding KeySCommand}" />
+        <KeyBinding Key="Right" Command="{Binding KeyDCommand}" />
+    </Window.InputBindings>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".6*"></ColumnDefinition>
+            <ColumnDefinition Width="3.4*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height=".1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0 15 0 0" Grid.Row="0" Grid.Column="0" Panel.ZIndex="1">
+            <TextBlock Margin="15" Text="Score table:" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+            <ListBox   ItemsSource="{Binding ScoreTable}" Height="240" Width="150" Panel.ZIndex="2" Background="Black" BorderBrush="Black">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Position}" FontWeight="Bold" />
+                                <TextBlock Text=". "  FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Nickname}" FontWeight="Bold" />
+                                <TextBlock Text=" " />
+                                <TextBlock Text="{Binding Score}" FontWeight="Bold"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <ItemsControl Margin ="-165 0 0 0" ItemsSource="{Binding GameObjectsView}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Panel.ZIndex="0" Background="White" Height="{Binding CanvasHeight}"
+                                Width="{Binding CanvasWidth}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        <Grid x:Name="LayoutRoot" Grid.Column="2" Grid.Row="0">
+            <ListBox Grid.IsSharedSizeScope="True" Height="{Binding ElementName=LayoutRoot, Path=ActualHeight}"
+                     ItemsSource="{Binding ChatMessages}" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2" Background="#FAFAFA">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3.1*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBox Margin="5 15 10 15" Grid.Column="0" Text="{Binding Message}" />
+            <Button Content="Send" Command="{Binding SendMessageCommand}" Margin="5 15 5 15" Grid.Column="1" />
+        </Grid>
+
+    </Grid>
+</Window>

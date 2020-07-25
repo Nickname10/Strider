@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GameSessions" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IGameSessions_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ClientServerModels" />
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels.PlayerModels" />
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGameSessions_Connect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Connect" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_Connect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_ChangeStateToMovingUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStateToMovingUp" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_ChangeStateToMovingLeft_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStateToMovingLeft" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_ChangeStateToMovingRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStateToMovingRight" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_ChangeStateToMovingDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStateToMovingDown" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_MessageCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MessageCallback" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_RefreshCoordinatesCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshCoordinatesCallback" />
+  </wsdl:message>
+  <wsdl:message name="IGameSessions_DestroyCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DestroyCallback" />
+  </wsdl:message>
+  <wsdl:portType name="IGameSessions">
+    <wsdl:operation name="Connect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/Connect" message="tns:IGameSessions_Connect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameSessions/ConnectResponse" message="tns:IGameSessions_Connect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/Disconnect" message="tns:IGameSessions_Disconnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/SendMessage" message="tns:IGameSessions_SendMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/ChangeStateToMovingUp" message="tns:IGameSessions_ChangeStateToMovingUp_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingLeft">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/ChangeStateToMovingLeft" message="tns:IGameSessions_ChangeStateToMovingLeft_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingRight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/ChangeStateToMovingRight" message="tns:IGameSessions_ChangeStateToMovingRight_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameSessions/ChangeStateToMovingDown" message="tns:IGameSessions_ChangeStateToMovingDown_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MessageCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameSessions/MessageCallback" message="tns:IGameSessions_MessageCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCoordinatesCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameSessions/RefreshCoordinatesCallback" message="tns:IGameSessions_RefreshCoordinatesCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DestroyCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameSessions/DestroyCallback" message="tns:IGameSessions_DestroyCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IGameSessions" type="tns:IGameSessions">
+    <wsp:PolicyReference URI="#NetTcpBinding_IGameSessions_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/Connect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingUp">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/ChangeStateToMovingUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingLeft">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/ChangeStateToMovingLeft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingRight">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/ChangeStateToMovingRight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStateToMovingDown">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/ChangeStateToMovingDown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MessageCallback">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/MessageCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshCoordinatesCallback">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/RefreshCoordinatesCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DestroyCallback">
+      <soap12:operation soapAction="http://tempuri.org/IGameSessions/DestroyCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GameSessions">
+    <wsdl:port name="NetTcpBinding_IGameSessions" binding="tns:NetTcpBinding_IGameSessions">
+      <soap12:address location="net.tcp://localhost:8002/GameServerServices.SessionsServices.GameSessionsService.GameSessions" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8002/GameServerServices.SessionsServices.GameSessionsService.GameSessions</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

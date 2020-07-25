@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ClientServerModels" />
+  <xs:import schemaLocation="http://localhost:8082/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels.PlayerModels" />
+  <xs:import schemaLocation="http://localhost:8082/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels" />
+  <xs:element name="Connect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameSessionId" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ClientServerModels" minOccurs="0" name="character" nillable="true" type="q1:Character" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ClientServerModels" minOccurs="0" name="loggedClient" nillable="true" type="q2:LoggedClient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels.PlayerModels" minOccurs="0" name="ConnectResult" nillable="true" type="q3:Player" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Disconnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gameSessionId" type="xs:int" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeStateToMovingUp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameSessionId" type="xs:int" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeStateToMovingLeft">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameSessionId" type="xs:int" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeStateToMovingRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameSessionId" type="xs:int" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeStateToMovingDown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gameSessionId" type="xs:int" />
+        <xs:element minOccurs="0" name="playerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MessageCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshCoordinatesCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels" minOccurs="0" name="foods" nillable="true" type="q4:ArrayOfFood" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels.PlayerModels" minOccurs="0" name="players" nillable="true" type="q5:ArrayOfPlayer" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ClientServerModels.GameSessionModels" minOccurs="0" name="playerScoreItems" nillable="true" type="q6:ArrayOfPlayerScoreItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DestroyCallback">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
